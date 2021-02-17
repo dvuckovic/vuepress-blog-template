@@ -1,0 +1,111 @@
+{
+  "_from": "@vuepress/theme-blog",
+  "_id": "@vuepress/theme-blog@2.3.2",
+  "_inBundle": false,
+  "_integrity": "sha512-568P2OZdeC5vdSWKSDCMMECWDUnT2HF9IIFne6xFPRBlLxQN56+vFOz1Wud2vkqG3S7Axr9uswf8yOCnuEzneA==",
+  "_location": "/@vuepress/theme-blog",
+  "_phantomChildren": {
+    "smoothscroll-polyfill": "0.4.4"
+  },
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@vuepress/theme-blog",
+    "name": "@vuepress/theme-blog",
+    "escapedName": "@vuepress%2ftheme-blog",
+    "scope": "@vuepress",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/@vuepress/theme-blog/-/theme-blog-2.3.2.tgz",
+  "_shasum": "b3d2c43dd3f2542ccc9adb4fc557945d4c036f2b",
+  "_spec": "@vuepress/theme-blog",
+  "_where": "/Users/duca/ws/vuepress",
+  "author": {
+    "name": "ulivz",
+    "email": "chl814@foxmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/ulivz/vuepress-theme-blog/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@vuepress/plugin-blog": "^1.9.2",
+    "@vuepress/plugin-medium-zoom": "^1.5.4",
+    "@vuepress/plugin-nprogress": "^1.5.4",
+    "@vuepress/plugin-pwa": "^1.5.4",
+    "@vuepress/plugin-search": "^1.5.4",
+    "dayjs": "^1.8.19",
+    "remove-markdown": "^0.3.0",
+    "vue-feather-icons": "^4.21.0",
+    "vuepress-plugin-smooth-scroll": "^0.0.9"
+  },
+  "deprecated": false,
+  "description": "Default blog theme for VuePress",
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "conventional-changelog-cli": "^2.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-sherry": "0.0.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-vue": "^6.0.1",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "sort-package-json": "^1.31.0",
+    "vuepress": "^1.5.4"
+  },
+  "files": [
+    "index.js",
+    "styles",
+    "layouts",
+    "global-components",
+    "fonts",
+    "components"
+  ],
+  "homepage": "https://github.com/ulivz/vuepress-theme-blog#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "license": "MIT",
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "package.json": [
+      "sort-package-json",
+      "git add"
+    ]
+  },
+  "main": "index.js",
+  "name": "@vuepress/theme-blog",
+  "peerDependencies": {
+    "vuepress": "^1.5.4"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ulivz/vuepress-theme-blog.git"
+  },
+  "scripts": {
+    "docs:build": "vuepress build docs",
+    "docs:dev": "vuepress dev docs",
+    "example:build": "vuepress build example --temp example/.temp",
+    "example:dev": "vuepress dev example --temp example/.temp",
+    "lint": "eslint . --ext .js,.vue",
+    "prepublishOnly": "npm run test && npm run example:build && conventional-changelog -p angular -r 2 -i CHANGELOG.md -s",
+    "test": "jest"
+  },
+  "version": "2.3.2"
+}

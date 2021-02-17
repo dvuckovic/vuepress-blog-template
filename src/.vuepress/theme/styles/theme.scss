@@ -1,0 +1,170 @@
+html {
+    overflow-y: scroll;
+    background: $dark;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    color: $light;
+    background: $jet;
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: $white;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:active,
+a:hover {
+    text-decoration: none;
+    outline: 0;
+    color: $primary;
+}
+
+a:focus {
+    outline: 0;
+}
+
+.Permalink {
+    float: left;
+    padding-right: 5px;
+    margin-left: -30px;
+    opacity: 0;
+    transition: opacity 0.1s;
+
+    @media (max-width: 767px) {
+        float: unset;
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    &:hover {
+        .Permalink {
+            opacity: 1;
+        }
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+    font-family: 'Helvetica', sans-serif;
+}
+
+@media (min-width: 992px) {
+    .container-lg {
+        max-width: 1040px;
+    }
+}
+
+.global-ui {
+    .sw-update-popup {
+        border-color: $battleship !important;
+        background: $jet !important;
+        color: $cultured;
+        border-radius: 0.25em;
+
+        button {
+            font-family: 'Helvetica', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            background: $white;
+            color: $black;
+            border-radius: 0.25em;
+            border: none;
+            padding: 0 15px;
+
+            &:hover {
+                background: $primary;
+                color: $white;
+            }
+        }
+    }
+}
+
+.modal {
+    &-header {
+        border-bottom: 0;
+        background: $primary;
+        color: $white;
+
+        h2 {
+            font-size: 1.25rem;
+        }
+
+        .btn-close {
+            color: $white;
+        }
+    }
+
+    &-content {
+        background: $jet;
+
+        p {
+            font-family: 'Garamond', serif;
+            font-size: 1rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        em {
+            color: $white;
+        }
+    }
+
+    &-footer {
+        border-top: none;
+
+        button {
+            font-family: Inter,sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            background: $white;
+            color: $black;
+            border-radius: 0.25em;
+            border: none;
+            padding: 10px 15px;
+
+            &:hover {
+                background: $primary;
+                color: $white;
+            }
+        }
+    }
+}
+
+@keyframes pulse-color {
+    0% {
+        background-color: $secondary;
+    }
+    50% {
+        background-color: $davys;
+    }
+    100% {
+        background-color: $secondary;
+    }
+}

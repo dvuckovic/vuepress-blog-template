@@ -1,0 +1,26 @@
+$crayola: #3eaf7c;
+$black: #000;
+$rich: #111;
+$eerie: #222;
+$jet: #333;
+$onyx: #444;
+$davys: #555;
+$battleship: #888;
+$spanish: #999;
+$silver: #aaa;
+$_light: #ccc;
+$gainsboro: #ddd;
+$cultured: #eee;
+$_white: #fff;
+
+// Bootstrap colors.
+// https://coolors.co/3eaf7c-444444-cccccc-222222-ffffff
+$primary: $crayola;
+$secondary: $onyx;
+$light: $_light;
+$dark: $eerie;
+$white: $_white;
+
+// Inverse for dark theme.
+$body-bg: $dark;
+$body-color: $light;
