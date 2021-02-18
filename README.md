@@ -1,5 +1,9 @@
 # vuepress-blog-template
 
+[![Workflow Status](https://img.shields.io/github/workflow/status/dvuckovic/vuepress-blog-template/Test?label=test)](https://github.com/dvuckovic/vuepress-blog-template/actions?query=workflow%3A"Test")
+[![Powered by VuePress](https://img.shields.io/github/package-json/dependency-version/dvuckovic/vuepress-blog-template/dev/vuepress)](https://vuepress.vuejs.org)
+![License](https://img.shields.io/github/package-json/license/dvuckovic/vuepress-blog-template?color=white)
+
 A VuePress blog template for static websites.
 
 ## Installation
