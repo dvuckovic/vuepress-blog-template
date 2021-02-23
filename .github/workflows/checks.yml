@@ -1,14 +1,11 @@
-name: Deploy to GitHub Pages
+name: Test # & Deploy
 
 # Controls when the action will run.
-#   Triggers the workflow on push events, but only for the main branch.
-on:
-  push:
-    branches:
-    - main
+#   Triggers the workflow on all pushes & pull requests.
+on: [push, pull_request]
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-20.04
     steps:
     - name: Checkout 🛎️
@@ -46,18 +43,17 @@ jobs:
       run: npm run build
 
     - name: Test ✅
-      if: success()
       run: npm test
 
-    - name: Deploy 🚀
-      if: success()
-      uses: crazy-max/ghaction-github-pages@v2
-      with:
-        author: Github Workflow <noreply@github.com>
-        commit_message: Deployed to Github Pages.
-        fqdn: example.com
-        build_dir: dist/
-        repo: username/username.github.io
-        target_branch: main
-      env:
-        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+    # - name: Deploy 🚀
+    #   if: success() && github.ref == 'refs/heads/main'
+    #   uses: crazy-max/ghaction-github-pages@v2
+    #   with:
+    #     author: Github Workflow <noreply@github.com>
+    #     commit_message: Deployed to Github Pages.
+    #     fqdn: example.com
+    #     build_dir: dist/
+    #     repo: username/username.github.io
+    #     target_branch: gh-pages
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
