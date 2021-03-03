@@ -6,6 +6,8 @@
 
 A VuePress blog template for static websites.
 
+[Demo](https://vuepress.dvuckovic.com)
+
 ## Installation
 
 ### Dependencies
