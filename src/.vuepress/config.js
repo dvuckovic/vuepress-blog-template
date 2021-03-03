@@ -1,11 +1,13 @@
 const path = require('path');
 const lodash = require('lodash');
 const dotenv = require('dotenv');
-const dotenvExpand = require('dotenv-expand');
 
-// Expand existing environment variables on top of those defined in .env file.
-const env = dotenv.config();
-dotenvExpand(env);
+// Load the environment variables both from the .env file and the process scope.
+//   In case of conflicts, the process value will win.
+const env = {
+    ...dotenv.config().parsed,
+    ...process.env,
+};
 
 module.exports = {
     title: 'Blog Title',
@@ -46,7 +48,7 @@ module.exports = {
         },
     },
     themeConfig: {
-        env: env.parsed,
+        env,
         logo: 'https://vuepress.vuejs.org/hero.png',
         coverHome: 'https://source.unsplash.com/random/2048x1024',
         coverError: 'https://source.unsplash.com/random/2048x1024',
