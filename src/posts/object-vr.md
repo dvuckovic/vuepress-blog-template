@@ -1,6 +1,6 @@
 ---
 title: Object VR
-image: https://source.unsplash.com/random/1024x768
+image: https://source.unsplash.com/random/1024x768?vr
 summary: A sample object VR
 hideImage: true
 date: 2021-01-06

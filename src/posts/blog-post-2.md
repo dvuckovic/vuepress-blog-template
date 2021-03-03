@@ -1,7 +1,7 @@
 ---
 title: Blog Post 2
-image: https://source.unsplash.com/random/1024x768?blog
-summary: Anoter sample blog post
+image: https://source.unsplash.com/random/1024x768?blog2
+summary: Another sample blog post
 date: 2021-01-03
 sticky: true
 weight: 2

@@ -1,6 +1,6 @@
 ---
 title: Static Page
-image: https://source.unsplash.com/random/1024x768?primer
+image: https://source.unsplash.com/random/1024x768?static
 summary: A sample static page
 date: 2021-01-01
 ---
