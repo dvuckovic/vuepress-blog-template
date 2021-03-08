@@ -95,8 +95,8 @@ module.exports = (themeConfig) => {
      * Integrate plugins
      */
     const enableSmoothScroll = themeConfig.smoothScroll === true;
-
     const gaPlugin = [];
+    const seoPlugin = [];
 
     if (themeConfig.ga) {
         if (
@@ -120,6 +120,31 @@ ${chalk.yellow('warning')} Did you forget to include it in the .env file?`
                 },
             ]);
         }
+    }
+
+    if (themeConfig.seo) {
+        seoPlugin.push([
+            'seo',
+            {
+                customMeta: (add, context) => {
+                    const { $site, $page, type } = context;
+
+                    if (type !== 'website') return;
+
+                    const title = ($page.frontmatter && $page.frontmatter.title) || $site.title;
+                    const description = ($page.frontmatter && $page.frontmatter.description) || $site.description;
+                    const image = ($page.frontmatter && $page.frontmatter.image) || $site.themeConfig.coverHome;
+
+                    // Add additional meta properties and tags to the aggregate pages.
+                    add('og:title', title, 'property');
+                    add('og:description', description, 'property');
+                    add('og:image', image, 'property');
+                    add('twitter:title', title);
+                    add('twitter:description', description);
+                    add('twitter:image', image);
+                },
+            },
+        ]);
     }
 
     const plugins = [
@@ -146,7 +171,7 @@ ${chalk.yellow('warning')} Did you forget to include it in the .env file?`
             enableSmoothScroll,
         ],
         ...gaPlugin,
-        'seo',
+        ...seoPlugin,
     ];
 
     /**

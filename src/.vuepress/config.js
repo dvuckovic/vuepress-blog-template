@@ -56,11 +56,12 @@ module.exports = {
         errorTitle: '404',
         errorDescription: 'Not Found',
         ga: false,
+        seo: true,
         globalPagination: {
             lengthPerPage: 4,
         },
         sitemap: {
-            // hostname: 'https://example.com',
+            hostname: 'https://example.com',
         },
         feed: {
             path: '/rss.xml',
