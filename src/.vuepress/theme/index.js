@@ -146,6 +146,7 @@ ${chalk.yellow('warning')} Did you forget to include it in the .env file?`
             enableSmoothScroll,
         ],
         ...gaPlugin,
+        'seo',
     ];
 
     /**
