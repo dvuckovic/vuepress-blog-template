@@ -1,0 +1,3 @@
+#!/bin/sh
+
+npx git-notify checkout $GIT_PARAMS
