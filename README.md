@@ -34,7 +34,7 @@ Links:
 ## Development Server
 
 ```sh
-npm run dev
+npm run serve
 ```
 
 ## Linting
@@ -43,35 +43,28 @@ npm run dev
 npm run lint
 ```
 
-## Production
+## Production Server
 
 ```sh
 npm start
 ```
 
-### Build
+### Build for Production
 
 ```sh
 npm run build
 ```
 
-### Serve
+### Start Server Only
 
 ```sh
-npm run serve
+npm run dist
 ```
 
 ## Testing
 
 ```sh
 npm test
-```
-
-Or:
-
-```sh
-npm run serve
-npm run test:all
 ```
 
 ### Unit Tests

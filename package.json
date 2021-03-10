@@ -5,9 +5,10 @@
     "scripts": {
         "postinstall": "scripts/postinstall.sh",
         "dev": "vuepress dev src",
+        "serve": "vuepress dev src",
         "build": "vuepress build src",
-        "start": "npm run build && npm run serve",
-        "serve": "serve --listen 8080 --no-clipboard dist",
+        "dist": "serve --listen 8080 --no-clipboard dist",
+        "start": "npm run build && npm run dist",
         "lint": "eslint --fix --ignore-path .gitignore \"src/.vuepress/**/*.js\" \"src/.vuepress/**/*.vue\" \"cypress/**/*.js\"",
         "test:all": "npm run test:unit && npm run test:e2e",
         "test:e2e": "cypress run --quiet",
