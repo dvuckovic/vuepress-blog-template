@@ -22,13 +22,6 @@ module.exports = {
                 href: '/favicon.ico',
             },
         ],
-        [
-            'link',
-            {
-                rel: 'stylesheet',
-                href: 'https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css',
-            },
-        ],
     ],
     scss: {
         additionalData: '@import "@/theme/styles/_variables";',

@@ -15,7 +15,8 @@ module.exports = {
     moduleNameMapper: {
         '~/(.*)$': '<rootDir>/$1',
         '@/(.*)$': '<rootDir>/.vuepress/$1',
-        '\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
+        '\\.s?css$': '<rootDir>/__mocks__/dummyMock.js',
+        '\\.svg$': '<rootDir>/__mocks__/dummyMock.js',
     },
     setupFiles: [
         'jest-canvas-mock',

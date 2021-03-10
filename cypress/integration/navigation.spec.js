@@ -31,9 +31,15 @@ describe('Navigation', () => {
         cy.get('@navbar-collapse').should('not.be.visible');
         cy.get('@navbar-toggler').should('be.visible');
 
-        cy.get('@navbar-toggler').find('i').should('have.class', 'bi-list');
-        cy.get('@navbar-toggler').click().find('i').should('have.class', 'bi-x');
-        cy.get('@navbar-toggler').click().find('i').should('have.class', 'bi-list');
+        cy.get('@navbar-toggler').find('svg use')
+            .should('have.attr', 'xlink:href')
+            .and('match', /#list$/);
+        cy.get('@navbar-toggler').click().find('svg use')
+            .should('have.attr', 'xlink:href')
+            .and('match', /#x$/);
+        cy.get('@navbar-toggler').click().find('svg use')
+            .should('have.attr', 'xlink:href')
+            .and('match', /#list$/);
 
         cy.viewport(1000, 660);
 
