@@ -122,6 +122,12 @@ module.exports = {
                 link: '/static-page',
             },
         ],
+        emailModal: {
+            title: 'Hey there!',
+            // eslint-disable-next-line max-len
+            body: '<p>The best way to get in touch with me directly is to drop me an email.</p>\n<p>My email address is <a href="mailto:test@example.com">test@example.com</a></p>',
+            button: 'Got it!',
+        },
         footer: {
             copyright: [
                 {
@@ -130,6 +136,11 @@ module.exports = {
                 },
             ],
             links: [
+                {
+                    text: 'Email',
+                    link: '#email-modal',
+                    toggle: 'modal',
+                },
                 {
                     text: 'Github',
                     link: 'https://github.com',
