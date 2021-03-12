@@ -150,15 +150,13 @@
 <script>
 import PhotoSwipe from 'photoswipe';
 import PhotoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
-import BootstrapIcon from './BootstrapIcon';
 
 import 'photoswipe/dist/photoswipe.css';
 import 'photoswipe/dist/default-skin/default-skin.css';
 
 export default {
     components: {
-        BootstrapIcon,
-        GeotagMap: () => import('./GeotagMap'),
+        GeotagMap: () => import(/* webpackChunkName: "getag-map" */ './GeotagMap'),
     },
 
     props: {
@@ -212,7 +210,7 @@ export default {
         // Initialize the masonry layout.
         //   Dynamically import the library, because it's not SSR-friendly.
         //   eslint-disable-next-line new-cap
-        import('masonry-layout').then(Masonry => new Masonry.default(
+        import(/* webpackChunkName: "masonry-layout" */ 'masonry-layout').then(Masonry => new Masonry.default(
             this.$refs.photoAlbum,
             {
                 itemSelector: '.PhotoAlbum__Figure',
@@ -545,6 +543,10 @@ export default {
             cursor: default;
             background-color: $cultured;
             box-shadow: inset  0 0 7px rgba(0, 0, 0, 0.5);
+        }
+
+        .bi {
+            font-size: 1.2em;
         }
     }
 

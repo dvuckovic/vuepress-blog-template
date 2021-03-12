@@ -23,7 +23,10 @@ export default {
 
     mounted () {
         // Dynamically import the Bootstrap library, because it's not SSR-friendly.
-        import('bootstrap');
+        import(
+            /* webpackChunkName: "bootstrap" */
+            'bootstrap'
+        );
     },
 };
 </script>

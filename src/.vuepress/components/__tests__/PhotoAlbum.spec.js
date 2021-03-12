@@ -84,6 +84,7 @@ describe('PhotoAlbum', () => {
     it('mounts successfully', () => {
         wrapper = shallowMount(PhotoAlbum, {
             stubs: {
+                BootstrapIcon: true,
                 GeotagMap: true,
             },
         });

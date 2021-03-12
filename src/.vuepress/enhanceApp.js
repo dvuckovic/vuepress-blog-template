@@ -9,8 +9,21 @@ export default ({
     // options,
     router,
     siteData,
-    // isServer
+    isServer,
 }) => {
+    if (isServer) {
+        Vue.component('BootstrapIcon', () => import(
+            /* webpackChunkName: "bootstrap-icon.ssr" */
+            '@dvuckovic/vue-bootstrap-icons/dist/bootstrap-icon.ssr'
+        ));
+    }
+    else {
+        Vue.component('BootstrapIcon', () => import(
+            /* webpackChunkName: "bootstrap-icon" */
+            '@dvuckovic/vue-bootstrap-icons'
+        ));
+    }
+
     // Suppress all Vue logs and warnings.
     Vue.config.silent = true;
 

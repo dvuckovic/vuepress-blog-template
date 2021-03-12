@@ -39,6 +39,9 @@ describe('PageFlip', () => {
                 pageflip: testFrontmatter.pageflips[0],
                 index: 0,
             },
+            stubs: {
+                BootstrapIcon: true,
+            },
         });
 
         expect(wrapper.find('.PageFlip').exists()).toBe(true);

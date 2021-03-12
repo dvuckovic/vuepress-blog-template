@@ -35,7 +35,7 @@
                     v-on:click="isMenuOpen = !isMenuOpen">
                     <BootstrapIcon
                         v-bind:icon="isMenuOpen ? 'x' : 'list'"
-                        size="21" />
+                        size="lg" />
                 </button>
                 <div
                     id="navbar"
@@ -60,10 +60,10 @@
                     </ul>
                     <ul class="navbar-nav justify-content-end align-items-end Header__Nav__Right">
                         <li class="nav-item">
-                            <SearchBox class="pe-3" />
+                            <SearchBox class="pe-4" />
                         </li>
                         <li class="nav-item">
-                            <Feed class="pe-3" />
+                            <Feed class="pe-4" />
                         </li>
                         <li
                             v-for="(item, index) in contact"
@@ -73,10 +73,12 @@
                                 v-bind:link="item.link"
                                 v-bind:title="item.text"
                                 v-bind:class="{
-                                    'pe-3': index < contact.length - 1
+                                    'pe-4': index < contact.length - 1
                                 }"
                                 class="position-relative d-block">
-                                <BootstrapIcon v-bind:icon="item.icon" />
+                                <BootstrapIcon
+                                    v-bind:icon="item.icon"
+                                    size="lg" />
                             </NavLink>
                         </li>
                     </ul>
@@ -339,12 +341,12 @@ export default {
         font-weight: 600;
         width: 175px;
         line-height: unset;
-        height: 21px;
+        height: 24px;
         border-color: transparent;
-        background-size: 13px;
-        background-position-x: 4px;
-        background-position-y: 3px;
-        padding-left: 20px;
+        background-size: 15px;
+        background-position-x: 5px;
+        background-position-y: 4px;
+        padding-left: 24px;
 
         &:hover,
         &:focus {
@@ -352,7 +354,7 @@ export default {
         }
 
         &:focus {
-            padding-left: 20px;
+            padding-left: 24px;
             width: 175px;
         }
 
@@ -370,7 +372,7 @@ export default {
         @media (max-width: 768px) {
             & {
                 width: 0;
-                padding-left: 13px;
+                padding-left: 16px;
 
                 &:focus {
                     width: 175px;
@@ -396,7 +398,7 @@ export default {
         @media (max-width: 575px) {
             & {
                 width: 100%;
-                padding-left: 20px;
+                padding-left: 24px;
 
                 &:focus {
                     width: 100%;

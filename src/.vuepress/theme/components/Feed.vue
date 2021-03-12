@@ -4,7 +4,9 @@
         v-bind:href="getFirstEnabledFeed | getFeedFilePath"
         class="Feed"
         title="Feed">
-        <BootstrapIcon icon="rss-fill" />
+        <BootstrapIcon
+            icon="rss-fill"
+            size="lg" />
     </a>
 </template>
 

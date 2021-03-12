@@ -53,13 +53,8 @@
 import { PageFlip } from 'page-flip';
 import { sprintf } from 'sprintf-js';
 import { upperFirst, kebabCase } from 'lodash';
-import BootstrapIcon from './BootstrapIcon';
 
 export default {
-    components: {
-        BootstrapIcon,
-    },
-
     props: {
         pageflip: {
             type: Object,
@@ -228,6 +223,10 @@ export default {
                 color: $white;
                 background-color: $primary;
             }
+        }
+
+        .bi {
+            font-size: 1.2em;
         }
     }
 
