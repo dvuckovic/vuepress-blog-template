@@ -12,7 +12,10 @@
                 type="button"
                 class="btn btn-light PhotoAlbum__ModeSwitch__Album"
                 v-on:click="switchMode('album')">
-                <BootstrapIcon icon="image-fill" /> Album
+                <BootstrapIcon
+                    icon="image-fill"
+                    size="md" />
+                Album
             </button>
             <button
                 type="button"
@@ -21,7 +24,10 @@
                 }"
                 class="btn btn-light PhotoAlbum__ModeSwitch__Map"
                 v-on:click="switchMode('map')">
-                <BootstrapIcon icon="geo-fill" /> Map
+                <BootstrapIcon
+                    icon="geo-fill"
+                    size="md" />
+                Map
             </button>
         </div>
 

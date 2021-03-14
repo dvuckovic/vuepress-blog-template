@@ -30,7 +30,10 @@
                             type="button"
                             class="btn btn-light PageFlip__ExpandButton"
                             v-on:click="toggle">
-                            <BootstrapIcon icon="book-fill" /> Preview
+                            <BootstrapIcon
+                                icon="book-fill"
+                                size="md" />
+                            Preview
                         </button>
                     </div>
                     <transition name="PageFlip__Expand">
@@ -223,10 +226,6 @@ export default {
                 color: $white;
                 background-color: $primary;
             }
-        }
-
-        .bi {
-            font-size: 1.2em;
         }
     }
 

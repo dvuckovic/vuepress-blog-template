@@ -78,7 +78,7 @@
                                 class="position-relative d-block">
                                 <BootstrapIcon
                                     v-bind:icon="item.icon"
-                                    size="lg" />
+                                    size="md" />
                             </NavLink>
                         </li>
                     </ul>

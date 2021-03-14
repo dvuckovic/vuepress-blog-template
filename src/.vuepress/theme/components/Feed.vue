@@ -6,7 +6,7 @@
         title="Feed">
         <BootstrapIcon
             icon="rss-fill"
-            size="lg" />
+            size="md" />
     </a>
 </template>
 
