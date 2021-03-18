@@ -1,4 +1,6 @@
 import LoadScript from 'vue-plugin-load-script';
+import BootstrapIconSsr from '@dvuckovic/vue-bootstrap-icons/dist/bootstrap-icon.ssr';
+import BootstrapIcon from '@dvuckovic/vue-bootstrap-icons/dist/bootstrap-icon.esm';
 import redirects from './redirects';
 
 // Load syntax highlighting styles.
@@ -11,18 +13,8 @@ export default ({
     siteData,
     isServer,
 }) => {
-    if (isServer) {
-        Vue.component('BootstrapIcon', () => import(
-            /* webpackChunkName: "bootstrap-icon.ssr" */
-            '@dvuckovic/vue-bootstrap-icons/dist/bootstrap-icon.ssr'
-        ));
-    }
-    else {
-        Vue.component('BootstrapIcon', () => import(
-            /* webpackChunkName: "bootstrap-icon" */
-            '@dvuckovic/vue-bootstrap-icons'
-        ));
-    }
+    if (isServer) Vue.component('BootstrapIcon', BootstrapIconSsr);
+    else Vue.component('BootstrapIcon', BootstrapIcon);
 
     // Suppress all Vue logs and warnings.
     Vue.config.silent = true;
