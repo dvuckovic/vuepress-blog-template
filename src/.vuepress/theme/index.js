@@ -172,6 +172,12 @@ ${chalk.yellow('warning')} Did you forget to include it in the .env file?`
         ],
         ...gaPlugin,
         ...seoPlugin,
+        [
+            'live',
+            {
+                layout: path.resolve(__dirname, 'layouts/VueLiveLayout.vue'),
+            },
+        ],
     ];
 
     /**

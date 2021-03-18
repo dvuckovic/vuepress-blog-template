@@ -57,6 +57,13 @@ You can use `variables` in inline text too!
 print('Hello, world!')
 ```
 
+```vue live
+<BootstrapIcon
+    icon="bootstrap-fill"
+    variant="light"
+    size="2x" />
+```
+
 ## Lists
 
 ### Bullets
