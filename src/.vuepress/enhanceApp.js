@@ -37,9 +37,15 @@ export default ({
     redirects.forEach((redirect) => {
         router.addRoute({
             path: redirect.from,
-            redirect: {
-                path: redirect.to.split('#')[0],
-                hash: redirect.to.split('#')[1] ? `#${redirect.to.split('#')[1]}` : undefined,
+            redirect: () => {
+                // Redirect to an external address, if dealing with an absolute URL.
+                if (/^https?:\/\//.test(redirect.to)) return window.location.replace(redirect.to);
+
+                // Otherwise, return the redirect route hash.
+                return {
+                    path: redirect.to.split('#')[0],
+                    hash: redirect.to.split('#')[1] ? `#${redirect.to.split('#')[1]}` : undefined,
+                };
             },
         });
     });
