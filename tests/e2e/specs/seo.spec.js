@@ -1,6 +1,5 @@
-/// <reference types="cypress" />
 import matter from 'gray-matter';
-import { base, title, description, themeConfig } from '../../src/.vuepress/config';
+import { base, title, description, themeConfig } from '../../../src/.vuepress/config';
 
 describe('SEO', () => {
     // This test runs only if SEO has been activated in the configuration.

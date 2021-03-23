@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import { sprintf } from 'sprintf-js';
-import PageFlip from '../PageFlip';
+import PageFlip from '@/components/PageFlip';
 
 const testFrontmatter = {
     pageflips: [

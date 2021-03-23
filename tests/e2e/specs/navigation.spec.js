@@ -1,5 +1,4 @@
-/// <reference types="cypress" />
-import { base, themeConfig } from '../../src/.vuepress/config';
+import { base, themeConfig } from '../../../src/.vuepress/config';
 
 describe('Navigation', () => {
     it('start at root level', () => {

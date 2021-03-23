@@ -1,5 +1,4 @@
-/// <reference types="cypress" />
-import { themeConfig } from '../../src/.vuepress/config';
+import { themeConfig } from '../../../src/.vuepress/config';
 
 describe('Object VR', () => {
     // This test runs only if Object2VR player has been defined in the configuration.

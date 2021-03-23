@@ -55,7 +55,7 @@ npm start
 npm run build
 ```
 
-### Start Server Only
+### Serve Production Build
 
 ```sh
 npm run dist
@@ -71,12 +71,10 @@ npm test
 
 ```sh
 npm run test:unit
-npm run test:unit:debug
 ```
 
 ### End-to-end Tests
 
 ```sh
 npm run test:e2e
-npm run test:e2e:debug
 ```

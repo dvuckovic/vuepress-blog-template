@@ -1,5 +1,4 @@
-/// <reference types="cypress" />
-import { title, description, base, themeConfig } from '../../src/.vuepress/config';
+import { title, description, base, themeConfig } from '../../../src/.vuepress/config';
 
 describe('Homepage', () => {
     it('renders at root level', () => {

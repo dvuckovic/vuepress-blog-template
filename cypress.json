@@ -1,5 +1,7 @@
 {
     "baseUrl": "http://localhost:8080",
     "nodeVersion": "system",
-    "projectId": "aafo95"
+    "pluginsFile": "tests/e2e/plugins/index.js",
+    "video": false,
+    "screenshotOnRunFailure": false
 }

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { shallowMount } from '@vue/test-utils';
-import GeotagMap from '../GeotagMap';
+import GeotagMap from '@/components/GeotagMap';
 
 const testFrontmatter = {
     paths: {

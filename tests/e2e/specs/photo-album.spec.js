@@ -1,5 +1,4 @@
-/// <reference types="cypress" />
-import { themeConfig } from '../../src/.vuepress/config';
+import { themeConfig } from '../../../src/.vuepress/config';
 
 describe('Photo Album', () => {
     it('renders photo album', () => {

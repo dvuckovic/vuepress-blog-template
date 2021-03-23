@@ -1,5 +1,4 @@
-/// <reference types="cypress" />
-import { base, themeConfig } from '../../src/.vuepress/config';
+import { base, themeConfig } from '../../../src/.vuepress/config';
 
 describe('Analytics', () => {
     // This test runs only if GA has been activated in the configuration.

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { shallowMount } from '@vue/test-utils';
-import PhotoAlbum from '../PhotoAlbum';
+import PhotoAlbum from '@/components/PhotoAlbum';
 
 const testFrontmatter = {
     paths: {

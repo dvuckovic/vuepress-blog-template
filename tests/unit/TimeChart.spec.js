@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import TimeChart from '../TimeChart';
+import TimeChart from '@/components/TimeChart';
 
 const testData = [
     [

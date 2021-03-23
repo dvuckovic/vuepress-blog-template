@@ -1,6 +1,5 @@
-/// <reference types="cypress" />
-import { themeConfig } from '../../src/.vuepress/config';
-import redirects from '../../src/.vuepress/redirects';
+import { themeConfig } from '../../../src/.vuepress/config';
+import redirects from '../../../src/.vuepress/redirects';
 
 describe('Redirects', () => {
     it('executes a sample redirection properly', () => {

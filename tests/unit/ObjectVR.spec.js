@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { shallowMount } from '@vue/test-utils';
-import ObjectVR from '../ObjectVR';
+import ObjectVR from '@/components/ObjectVR';
 
 const testFrontmatter = {
     objects: [

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { shallowMount } from '@vue/test-utils';
-import PhotoSphere from '../PhotoSphere';
+import PhotoSphere from '@/components/PhotoSphere';
 
 const testFrontmatter = {
     panoramas: [

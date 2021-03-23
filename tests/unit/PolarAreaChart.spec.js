@@ -1,28 +1,28 @@
 import { shallowMount } from '@vue/test-utils';
-import DoughnutChart from '../DoughnutChart';
+import PolarAreaChart from '@/components/PolarAreaChart';
 
 const testData = [
     [
-        50,
-        25,
-        12.5,
-        6.25,
-        3.125,
-        1.5625,
-        0.78125,
-        0.78125,
+        125,
+        1288,
+        104,
+        2568,
+        190,
+        1147,
+        387,
+        2554,
     ],
 ];
 
 const testLabels = [
-    '1/2',
-    '1/4',
-    '1/8',
-    '1/16',
-    '1/32',
-    '1/64',
-    '1/128',
-    '1/128',
+    'N',
+    'NE',
+    'E',
+    'SE',
+    'S',
+    'SW',
+    'W',
+    'NW',
 ];
 
 const chartColors = [
@@ -34,23 +34,13 @@ const chartColors = [
     '#91b9fa',
     '#84c5f5',
     '#87ceeb',
-    '#5dd2e2',
-    '#40d5ca',
-    '#51d4a5',
-    '#78d078',
-    '#a4c74a',
-    '#d1b821',
-    '#ffa119',
-    '#ff940d',
-    '#ff8604',
-    '#ff7700',
 ];
 
-describe('DoughnutChart', () => {
+describe('PolarAreaChart', () => {
     let wrapper;
 
     it('mounts successfully', () => {
-        wrapper = shallowMount(DoughnutChart, {
+        wrapper = shallowMount(PolarAreaChart, {
             propsData: {
                 data: testData,
                 labels: testLabels,
