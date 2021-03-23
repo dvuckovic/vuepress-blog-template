@@ -1,26 +1,16 @@
 module.exports = {
+    root: true,
     env: {
-        browser: true,
-        es2021: true,
-        jest: true,
+        node: true,
     },
-
     extends: [
-        'airbnb-base',
-        'plugin:vue/recommended',
         'plugin:cypress/recommended',
-        'plugin:chai-friendly/recommended',
+        'plugin:vue/recommended',
+        '@vue/airbnb',
     ],
-
     parserOptions: {
-        ecmaVersion: 12,
-        sourceType: 'module',
+        parser: 'babel-eslint',
     },
-
-    plugins: [
-        'vue',
-    ],
-
     rules: {
 
         /*
@@ -28,12 +18,12 @@ module.exports = {
          */
 
         // Enforce consistent indentation.
-        'indent': [ 'error', 4, {
-            'SwitchCase': 1,
+        indent: [ 'error', 4, {
+            SwitchCase: 1,
             // Fix issue with `Cannot read property 'range' of null` errors. Please see
             //   https://stackoverflow.com/questions/48391913/eslint-error-cannot-read-property-range-of-null
             //   for more information.
-            'ignoredNodes': [ 'TemplateLiteral' ],
+            ignoredNodes: [ 'TemplateLiteral' ],
         } ],
 
         // Fix issue with `Cannot read property 'range' of null` errors. Please see
@@ -108,8 +98,9 @@ module.exports = {
         // Disable newline requirement for object curly syntax.
         'object-curly-newline': 'off',
 
-        // Allow usage of console.
-        'no-console': 'off',
+        // Allow usage of console and debugger in dev mode.
+        'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 
         /*
          * Vue.js rule overrides.
@@ -139,4 +130,14 @@ module.exports = {
         // Don't correct new lines in single line HTML elements for backward compatibility reasons.
         'vue/singleline-html-element-content-newline': 'off',
     },
+    overrides: [
+        {
+            files: [
+                '**/__tests__/*.{j,t}s?(x)',
+            ],
+            env: {
+                jest: true,
+            },
+        },
+    ],
 };
