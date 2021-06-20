@@ -1,18 +1,25 @@
 name: Test # & Deploy
 
-# Controls when the action will run.
-#   Triggers the workflow on all pushes & pull requests, except on tag creation.
+# Controls when the action will run
 on:
+
+  # Trigger the workflow on all pushes, except on tag creation
   push:
     branches:
     - '**'
     tags-ignore:
     - '**'
+
+  # Trigger the workflow on all pull requests
   pull_request:
 
+  # Allow workflow to be dispatched on demand
+  workflow_dispatch:
+
 jobs:
-  github_ci:
-    runs-on: ubuntu-20.04
+  deploy:
+    name: Test # & Deploy
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout 🛎️
       uses: actions/checkout@v2
