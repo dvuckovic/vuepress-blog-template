@@ -129,6 +129,13 @@ module.exports = {
 
         // Don't correct new lines in single line HTML elements for backward compatibility reasons.
         'vue/singleline-html-element-content-newline': 'off',
+
+        // Don't enforce component names.
+        'vue/multi-word-component-names': 'off',
+
+        // Disable accessibility rules for now.
+        'vuejs-accessibility/anchor-has-content': 'off',
+        'vuejs-accessibility/click-events-have-key-events': 'off',
     },
     overrides: [
         {
