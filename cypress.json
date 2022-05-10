@@ -2,5 +2,14 @@
     "baseUrl": "http://localhost:8080",
     "pluginsFile": "tests/e2e/plugins/index.js",
     "video": false,
-    "screenshotOnRunFailure": false
+    "screenshotOnRunFailure": false,
+    "reporterOptions": {
+        "reporterEnabled": "mochawesome",
+        "mochawesomeReporterOptions": {
+            "reportDir": "./mochawesome/",
+            "overwrite": false,
+            "html": false,
+            "json": true
+        }
+    }
 }

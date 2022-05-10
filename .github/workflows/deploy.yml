@@ -53,7 +53,15 @@ jobs:
         echo OBJECT2VR_PLAYER=$OBJECT2VR_PLAYER >> .env
 
     - name: Test ✅
-      run: npm test
+      run: npm run ci-test
+
+    - name: Summary 📝
+      if: always()
+      run: |
+        cat JEST_RESULTS.md >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        cat CYPRESS_RESULTS.md >> $GITHUB_STEP_SUMMARY
 
     # - name: Deploy 🚀
     #   if: success() && github.ref == 'refs/heads/main'
