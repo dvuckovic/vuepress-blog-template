@@ -9,7 +9,8 @@
 
 <script>
 import { Viewer } from 'photo-sphere-viewer';
-import GyroscopePlugin from 'photo-sphere-viewer/dist/plugins/gyroscope';
+import { CubemapAdapter } from 'photo-sphere-viewer/dist/adapters/cubemap';
+import { GyroscopePlugin } from 'photo-sphere-viewer/dist/plugins/gyroscope';
 import InViewport from 'vue-in-viewport-mixin';
 
 import 'photo-sphere-viewer/dist/photo-sphere-viewer.css';
@@ -89,6 +90,7 @@ export default {
             this.$nextTick(() => {
                 this.photoSphereViewer = new Viewer({
                     container: document.querySelector(`#${this.photoSphereId}`),
+                    adapter: [ CubemapAdapter ],
                     panorama: this.photoSphere.panorama,
                     caption: this.photoSphere.caption,
                     navbar: [
