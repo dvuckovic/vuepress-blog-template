@@ -27,20 +27,15 @@ jobs:
     - name: Cache 💾
       uses: actions/cache@v2
       env:
-          cache-name: cache-npm
+        cache-name: cache-npm
       with:
-          path: |
-            ~/.npm
-            ~/.cache
-            **/node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+        path: |
+          ~/.npm
+          ~/.cache
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
 
     - name: Install 📦
-      run: npm install --no-save
+      run: npm ci --legacy-peer-deps
 
     - name: Setup 📢
       env:
