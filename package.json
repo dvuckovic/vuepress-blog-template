@@ -65,7 +65,7 @@
         "mochawesome-json-to-md": "^0.6.2",
         "mochawesome-merge": "^4.2.1",
         "mochawesome-report-generator": "^6.2.0",
-        "moment": "^2.29.2",
+        "moment": "^2.29.4",
         "page-flip": "^2.0.0",
         "papaparse": "^5.3.0",
         "photo-sphere-viewer": "^4.0.7",
