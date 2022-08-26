@@ -1,4 +1,4 @@
-name: Test # & Deploy
+name: Build & Deploy
 
 # Controls when the action will run
 on:
@@ -13,13 +13,24 @@ on:
   # Allow workflow to be dispatched on demand
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
-  deploy:
-    name: Test # & Deploy
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
     - name: Checkout 🛎️
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Cache 💾
       uses: actions/cache@v2
@@ -55,15 +66,29 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         cat CYPRESS_RESULTS.md >> $GITHUB_STEP_SUMMARY
 
-    # - name: Deploy 🚀
-    #   if: success() && github.ref == 'refs/heads/main'
-    #   uses: crazy-max/ghaction-github-pages@v2
-    #   with:
-    #     author: Github Workflow <noreply@github.com>
-    #     commit_message: Deployed to Github Pages.
-    #     fqdn: example.com
-    #     build_dir: dist/
-    #     repo: username/username.github.io
-    #     target_branch: gh-pages
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+    - name: Configure 🔧
+      if: github.ref == 'refs/heads/main'
+      uses: actions/configure-pages@v2
+
+    - name: Build ⚙️
+      if: github.ref == 'refs/heads/main'
+      run: npm run build
+
+    - name: Upload ⬆️
+      if: github.ref == 'refs/heads/main'
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: dist/
+
+  deploy:
+    name: Deploy
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy 🚀
+        id: deployment
+        uses: actions/deploy-pages@v1
