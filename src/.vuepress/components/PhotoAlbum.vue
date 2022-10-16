@@ -469,6 +469,18 @@ export default {
         font-size: 2rem;
     }
 
+    &__ImageGallery {
+        pointer-events: none;
+
+        * {
+            pointer-events: auto;
+        }
+
+        &:hover .PhotoAlbum__Thumbnail:not(:hover) {
+            filter: brightness(0.5);
+        }
+    }
+
     &__Figure {
         width: calc(20% - 4px);
         margin: 0 0 5px;
@@ -498,10 +510,7 @@ export default {
         animation-name: pulse-color;
         animation-duration: 1s;
         animation-iteration-count: infinite;
-
-        &:hover {
-            filter: brightness(0.5);
-        }
+        transition: filter 300ms;
     }
 
     &__Figcaption {

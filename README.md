@@ -13,7 +13,7 @@ A VuePress blog template for static websites.
 ### Dependencies
 
 ```sh
-npm install --no-save
+npm install --no-save --legacy-peer-deps
 ```
 
 ### Setup Environment
